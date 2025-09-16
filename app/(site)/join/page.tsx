@@ -1,14 +1,20 @@
 import { PageHeader } from "@/components/page-header";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Wrench, 
-  Truck, 
-  Users, 
+import {
+  Wrench,
+  Truck,
+  Users,
   ArrowRight,
   CheckCircle,
   MapPin,
-  Clock
+  Clock,
 } from "lucide-react";
 
 export default function JoinPage() {
@@ -17,10 +23,7 @@ export default function JoinPage() {
       <PageHeader
         title="Join Our Network"
         description="Be part of the healthcare transformation in Tanzania"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "Join Us" }
-        ]}
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Join Us" }]}
       />
 
       <section className="py-16 bg-white">
@@ -31,8 +34,9 @@ export default function JoinPage() {
               Choose Your Path
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Whether you&apos;re a healthcare facility, manufacturer, or biomedical technician,
-              there&apos;s a place for you in our mission to transform healthcare in Tanzania.
+              Whether you&apos;re a healthcare facility, manufacturer, or
+              biomedical technician, there&apos;s a place for you in our mission
+              to transform healthcare in Tanzania.
             </p>
           </div>
 
@@ -46,30 +50,45 @@ export default function JoinPage() {
                 </div>
                 <CardTitle className="text-2xl">Health Facilities</CardTitle>
                 <CardDescription className="text-lg">
-                  Subscribe to our comprehensive healthcare solutions for your facility
+                  Subscribe to our comprehensive healthcare solutions for your
+                  facility
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Green energy solutions with TZS 2.1M+ monthly savings</span>
+                    <span className="text-gray-700">
+                      Green energy solutions with TZS 2.1M+ monthly savings
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Preventive maintenance reducing downtime by 75%</span>
+                    <span className="text-gray-700">
+                      Preventive maintenance reducing downtime by 75%
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Patient feedback management system</span>
+                    <span className="text-gray-700">
+                      Patient feedback management system
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Specialist scheduling and appointment management</span>
+                    <span className="text-gray-700">
+                      Specialist scheduling and appointment management
+                    </span>
                   </div>
                 </div>
-                <Button className="w-full bg-brand hover:bg-brand-700 text-white" asChild>
-                  <a href="/contact" className="flex items-center justify-center gap-2">
+                <Button
+                  className="w-full bg-brand hover:bg-brand-700 text-white"
+                  asChild
+                >
+                  <a
+                    href="/contact"
+                    className="flex items-center justify-center gap-2"
+                  >
                     Subscribe Now
                     <ArrowRight className="h-4 w-4" />
                   </a>
@@ -85,30 +104,45 @@ export default function JoinPage() {
                 </div>
                 <CardTitle className="text-2xl">Partners</CardTitle>
                 <CardDescription className="text-lg">
-                  Join our network as a solar infrastructure or medical device manufacturer
+                  Join our network as a solar infrastructure or medical device
+                  manufacturer
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Access to healthcare facilities network</span>
+                    <span className="text-gray-700">
+                      Access to healthcare facilities network
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Guaranteed client base and steady demand</span>
+                    <span className="text-gray-700">
+                      Guaranteed client base and steady demand
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Marketing support and brand visibility</span>
+                    <span className="text-gray-700">
+                      Marketing support and brand visibility
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Streamlined logistics and distribution</span>
+                    <span className="text-gray-700">
+                      Streamlined logistics and distribution
+                    </span>
                   </div>
                 </div>
-                <Button className="w-full bg-brand hover:bg-brand-700 text-white" asChild>
-                  <a href="/contact" className="flex items-center justify-center gap-2">
+                <Button
+                  className="w-full bg-brand hover:bg-brand-700 text-white"
+                  asChild
+                >
+                  <a
+                    href="/contact"
+                    className="flex items-center justify-center gap-2"
+                  >
                     Partner With Us
                     <ArrowRight className="h-4 w-4" />
                   </a>
@@ -122,32 +156,49 @@ export default function JoinPage() {
                 <div className="w-16 h-16 bg-brand/10 rounded-2xl flex items-center justify-center mb-4">
                   <Wrench className="h-8 w-8 text-brand" />
                 </div>
-                <CardTitle className="text-2xl">Biomedical Technicians</CardTitle>
+                <CardTitle className="text-2xl">
+                  Biomedical Technicians
+                </CardTitle>
                 <CardDescription className="text-lg">
-                  Join our certified network of medical equipment repair specialists
+                  Join our certified network of medical equipment repair
+                  specialists
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Competitive compensation packages</span>
+                    <span className="text-gray-700">
+                      Competitive compensation packages
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Professional training and certification</span>
+                    <span className="text-gray-700">
+                      Professional training and certification
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Flexible work schedules</span>
+                    <span className="text-gray-700">
+                      Flexible work schedules
+                    </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                    <span className="text-gray-700">Latest tools and equipment</span>
+                    <span className="text-gray-700">
+                      Latest tools and equipment
+                    </span>
                   </div>
                 </div>
-                <Button className="w-full bg-brand hover:bg-brand-700 text-white" asChild>
-                  <a href="/contact" className="flex items-center justify-center gap-2">
+                <Button
+                  className="w-full bg-brand hover:bg-brand-700 text-white"
+                  asChild
+                >
+                  <a
+                    href="/contact"
+                    className="flex items-center justify-center gap-2"
+                  >
                     Apply as Technician
                     <ArrowRight className="h-4 w-4" />
                   </a>
@@ -185,7 +236,8 @@ export default function JoinPage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
-                    Flexible schedule with some weekend and emergency availability
+                    Flexible schedule with some weekend and emergency
+                    availability
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -218,9 +270,12 @@ export default function JoinPage() {
                     <CheckCircle className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-ink mb-2">Make a Real Impact</h3>
+                    <h3 className="font-semibold text-ink mb-2">
+                      Make a Real Impact
+                    </h3>
                     <p className="text-gray-600">
-                      Be part of a mission that&apos;s improving healthcare access and saving lives across Tanzania
+                      Be part of a mission that&apos;s improving healthcare
+                      access and saving lives across Tanzania
                     </p>
                   </div>
                 </div>
@@ -229,9 +284,12 @@ export default function JoinPage() {
                     <CheckCircle className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-ink mb-2">Professional Growth</h3>
+                    <h3 className="font-semibold text-ink mb-2">
+                      Professional Growth
+                    </h3>
                     <p className="text-gray-600">
-                      Access to training, certification programs, and career advancement opportunities
+                      Access to training, certification programs, and career
+                      advancement opportunities
                     </p>
                   </div>
                 </div>
@@ -240,9 +298,12 @@ export default function JoinPage() {
                     <CheckCircle className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-ink mb-2">Competitive Compensation</h3>
+                    <h3 className="font-semibold text-ink mb-2">
+                      Competitive Compensation
+                    </h3>
                     <p className="text-gray-600">
-                      Fair pay, performance bonuses, and comprehensive benefits package
+                      Fair pay, performance bonuses, and comprehensive benefits
+                      package
                     </p>
                   </div>
                 </div>
@@ -253,9 +314,12 @@ export default function JoinPage() {
                     <CheckCircle className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-ink mb-2">Flexible Work</h3>
+                    <h3 className="font-semibold text-ink mb-2">
+                      Flexible Work
+                    </h3>
                     <p className="text-gray-600">
-                      Work schedules that fit your lifestyle with remote and on-site options
+                      Work schedules that fit your lifestyle with remote and
+                      on-site options
                     </p>
                   </div>
                 </div>
@@ -264,9 +328,12 @@ export default function JoinPage() {
                     <CheckCircle className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-ink mb-2">Technology Support</h3>
+                    <h3 className="font-semibold text-ink mb-2">
+                      Technology Support
+                    </h3>
                     <p className="text-gray-600">
-                      Access to latest tools, equipment, and technology to do your job effectively
+                      Access to latest tools, equipment, and technology to do
+                      your job effectively
                     </p>
                   </div>
                 </div>
@@ -277,7 +344,8 @@ export default function JoinPage() {
                   <div>
                     <h3 className="font-semibold text-ink mb-2">Community</h3>
                     <p className="text-gray-600">
-                      Join a supportive community of professionals working towards a common goal
+                      Join a supportive community of professionals working
+                      towards a common goal
                     </p>
                   </div>
                 </div>
@@ -291,17 +359,26 @@ export default function JoinPage() {
               Ready to Make a Difference?
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join our growing network of healthcare professionals and be part of the transformation 
-              happening across Tanzania.
+              Join our growing network of healthcare professionals and be part
+              of the transformation happening across Tanzania.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-brand hover:bg-brand-700 text-white" asChild>
+              <Button
+                size="lg"
+                className="bg-brand hover:bg-brand-700 text-white"
+                asChild
+              >
                 <a href="/contact" className="flex items-center gap-2">
                   Apply Now
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-brand text-brand hover:bg-brand hover:text-white" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-brand text-brand hover:bg-brand hover:text-white"
+                asChild
+              >
                 <a href="/contact">Contact Us</a>
               </Button>
             </div>
@@ -311,4 +388,3 @@ export default function JoinPage() {
     </>
   );
 }
-

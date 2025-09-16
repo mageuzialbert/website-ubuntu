@@ -1,9 +1,23 @@
 import { PageHeader } from "@/components/page-header";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TeamMemberImage } from "@/components/team-member-image";
 import Image from "next/image";
-import { Target, Eye, Linkedin, Users2, TrendingUp, Hand, Zap } from "lucide-react";
+import {
+  Target,
+  Eye,
+  Linkedin,
+  Users2,
+  TrendingUp,
+  Hand,
+  Zap,
+} from "lucide-react";
 import teamData from "@/content/team.json";
 
 export default function AboutPage() {
@@ -12,10 +26,7 @@ export default function AboutPage() {
       <PageHeader
         title="About Ubuntu AfyaLink"
         description="Transforming healthcare delivery across Tanzania through innovative technology solutions"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "About" }
-        ]}
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
 
       <section className="py-16 bg-white">
@@ -31,7 +42,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600">
-                  To solve complex healthcare delivery problems with simple, affordable tech + human-powered logistics.
+                  To solve complex healthcare delivery problems with simple,
+                  affordable tech + human-powered logistics.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -44,14 +56,14 @@ export default function AboutPage() {
                 <CardTitle className="text-xl">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
-                  <CardDescription className="text-gray-600">
-                    Born from rural Tanzania, founded by experts in medicine, public health, and finance.
-We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building the tools to fix them.
-                  </CardDescription>
+                <CardDescription className="text-gray-600">
+                  Born from rural Tanzania, founded by experts in medicine,
+                  public health, and finance. We&apos;ve seen the pain of
+                  under-equipped clinics — and we&apos;re building the tools to
+                  fix them.
+                </CardDescription>
               </CardContent>
             </Card>
-
-
           </div>
 
           {/* Who We Are */}
@@ -60,20 +72,24 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
               Who We Are
             </h2>
             <div className="max-w-4xl mx-auto">
-                <p className="text-lg text-gray-600 mb-6">
-                  Ubuntu AfyaLink was founded in 2023 by a team of healthcare professionals, engineers, and 
-                  entrepreneurs who recognized the critical need for integrated technology solutions in Tanzanian 
-                  healthcare facilities.
-                </p>
-                <p className="text-lg text-gray-600 mb-6">
-                  Our name &quot;Ubuntu&quot; reflects our belief in the interconnectedness of all people and our commitment 
-                  to community-centered solutions. &quot;AfyaLink&quot; represents our mission to connect all aspects of 
-                  healthcare delivery through technology.
-                </p>
+              <p className="text-lg text-gray-600 mb-6">
+                Ubuntu AfyaLink was founded in 2023 by a team of healthcare
+                professionals, engineers, and entrepreneurs who recognized the
+                critical need for integrated technology solutions in Tanzanian
+                healthcare facilities.
+              </p>
+              <p className="text-lg text-gray-600 mb-6">
+                Our name &quot;Ubuntu&quot; reflects our belief in the
+                interconnectedness of all people and our commitment to
+                community-centered solutions. &quot;AfyaLink&quot; represents
+                our mission to connect all aspects of healthcare delivery
+                through technology.
+              </p>
               <p className="text-lg text-gray-600">
-                Based in Dar es Salaam, we work closely with healthcare facilities across Tanzania to understand 
-                their unique challenges and develop solutions that are both technologically advanced and culturally 
-                appropriate for the local context.
+                Based in Dar es Salaam, we work closely with healthcare
+                facilities across Tanzania to understand their unique challenges
+                and develop solutions that are both technologically advanced and
+                culturally appropriate for the local context.
               </p>
             </div>
           </div>
@@ -88,11 +104,14 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamData.map((member, index) => (
-                <Card key={index} className="card-rounded shadow-subtle text-center">
+                <Card
+                  key={index}
+                  className="card-rounded shadow-subtle text-center"
+                >
                   <CardHeader>
                     <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                      <TeamMemberImage 
-                        src={member.photo} 
+                      <TeamMemberImage
+                        src={member.photo}
                         alt={`${member.name} - ${member.role}`}
                         className="w-full h-full"
                       />
@@ -104,9 +123,9 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
                   </CardHeader>
                   <CardContent>
                     <Button variant="outline" size="sm" asChild>
-                      <a 
-                        href={member.linkedin} 
-                        target="_blank" 
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2"
                       >
@@ -136,7 +155,8 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-gray-600 text-center">
-                    We are because others are. We lead with compassion, community, inclusivity, and collaboration.
+                    We are because others are. We lead with compassion,
+                    community, inclusivity, and collaboration.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -162,7 +182,9 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
                   <div className="w-16 h-16 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Hand className="h-8 w-8 text-brand" />
                   </div>
-                  <CardTitle className="text-xl text-ink">Radical Ownership</CardTitle>
+                  <CardTitle className="text-xl text-ink">
+                    Radical Ownership
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-gray-600 text-center">
@@ -177,7 +199,9 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
                   <div className="w-16 h-16 bg-brand/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Zap className="h-8 w-8 text-brand" />
                   </div>
-                  <CardTitle className="text-xl text-ink">Experiment Boldly</CardTitle>
+                  <CardTitle className="text-xl text-ink">
+                    Experiment Boldly
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-gray-600 text-center">
@@ -213,10 +237,15 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
               Join Our Mission
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Be part of the healthcare transformation in Tanzania. Whether you&apos;re a healthcare professional, 
-              technician, or technology enthusiast, there&apos;s a place for you in our mission.
+              Be part of the healthcare transformation in Tanzania. Whether
+              you&apos;re a healthcare professional, technician, or technology
+              enthusiast, there&apos;s a place for you in our mission.
             </p>
-            <Button size="lg" className="bg-brand hover:bg-brand-700 text-white" asChild>
+            <Button
+              size="lg"
+              className="bg-brand hover:bg-brand-700 text-white"
+              asChild
+            >
               <a href="/join">Join Our Team</a>
             </Button>
           </div>
@@ -225,4 +254,3 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
     </>
   );
 }
-
