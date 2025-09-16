@@ -213,8 +213,8 @@ We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building t
               Join Our Mission
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Be part of the healthcare transformation in Tanzania. Whether you're a healthcare professional, 
-              technician, or technology enthusiast, there's a place for you in our mission.
+              Be part of the healthcare transformation in Tanzania. Whether you&apos;re a healthcare professional, 
+              technician, or technology enthusiast, there&apos;s a place for you in our mission.
             </p>
             <Button size="lg" className="bg-brand hover:bg-brand-700 text-white" asChild>
               <a href="/join">Join Our Team</a>

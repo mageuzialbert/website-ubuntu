@@ -31,7 +31,7 @@ export default function JoinPage() {
               Choose Your Path
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Whether you're a healthcare facility, manufacturer, or biomedical technician,
+              Whether you&apos;re a healthcare facility, manufacturer, or biomedical technician,
               there&apos;s a place for you in our mission to transform healthcare in Tanzania.
             </p>
           </div>
