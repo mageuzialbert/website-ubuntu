@@ -21,7 +21,7 @@ export function TestimonialSlider() {
                 <div className="text-center">
                   <Quote className="h-12 w-12 text-brand mx-auto mb-6" />
                   <blockquote className="text-xl md:text-2xl text-gray-700 mb-6 italic">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </blockquote>
                   <div className="border-t pt-6">
                     <p className="font-semibold text-ink text-lg">{testimonial.name}</p>

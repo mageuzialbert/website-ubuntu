@@ -8,7 +8,6 @@ import {
   HelpCircle, 
   Newspaper, 
   BookOpen, 
-  Calendar,
   User,
   ArrowRight
 } from "lucide-react";
@@ -153,7 +152,7 @@ export default function ResourcesPage() {
                   <BookOpen className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-gray-600 mb-2">Coming Soon</h3>
                   <p className="text-gray-500">
-                    We're working on comprehensive reports and whitepapers. Check back soon!
+                    We&apos;re working on comprehensive reports and whitepapers. Check back soon!
                   </p>
                 </div>
               )}
@@ -202,7 +201,7 @@ export default function ResourcesPage() {
                   <Newspaper className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-gray-600 mb-2">No Press Coverage Yet</h3>
                   <p className="text-gray-500">
-                    We're working on getting our story out there. Stay tuned for updates!
+                    We&apos;re working on getting our story out there. Stay tuned for updates!
                   </p>
                 </div>
               )}

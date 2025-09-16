@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Users } from "lucide-react";
 
 interface TeamMemberImageProps {
@@ -21,9 +22,11 @@ export function TeamMemberImage({ src, alt, className = "" }: TeamMemberImagePro
   }
 
   return (
-    <img 
+    <Image 
       src={src} 
       alt={alt}
+      width={96}
+      height={96}
       className={`w-full h-full object-cover ${className}`}
       onError={() => setImageError(true)}
     />

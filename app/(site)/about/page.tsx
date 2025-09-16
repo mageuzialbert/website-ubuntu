@@ -1,10 +1,9 @@
 import { PageHeader } from "@/components/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { TeamMemberImage } from "@/components/team-member-image";
 import Image from "next/image";
-import { Heart, Target, Eye, Users, Linkedin, Users2, TrendingUp, Hand, Zap } from "lucide-react";
+import { Target, Eye, Linkedin, Users2, TrendingUp, Hand, Zap } from "lucide-react";
 import teamData from "@/content/team.json";
 
 export default function AboutPage() {
@@ -45,10 +44,10 @@ export default function AboutPage() {
                 <CardTitle className="text-xl">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600">
-                Born from rural Tanzania, founded by experts in medicine, public health, and finance.
-We've seen the pain of under-equipped clinics — and we're building the tools to fix them.
-                </CardDescription>
+                  <CardDescription className="text-gray-600">
+                    Born from rural Tanzania, founded by experts in medicine, public health, and finance.
+We&apos;ve seen the pain of under-equipped clinics — and we&apos;re building the tools to fix them.
+                  </CardDescription>
               </CardContent>
             </Card>
 
@@ -61,16 +60,16 @@ We've seen the pain of under-equipped clinics — and we're building the tools t
               Who We Are
             </h2>
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-gray-600 mb-6">
-                Ubuntu AfyaLink was founded in 2023 by a team of healthcare professionals, engineers, and 
-                entrepreneurs who recognized the critical need for integrated technology solutions in Tanzanian 
-                healthcare facilities.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Our name "Ubuntu" reflects our belief in the interconnectedness of all people and our commitment 
-                to community-centered solutions. "AfyaLink" represents our mission to connect all aspects of 
-                healthcare delivery through technology.
-              </p>
+                <p className="text-lg text-gray-600 mb-6">
+                  Ubuntu AfyaLink was founded in 2023 by a team of healthcare professionals, engineers, and 
+                  entrepreneurs who recognized the critical need for integrated technology solutions in Tanzanian 
+                  healthcare facilities.
+                </p>
+                <p className="text-lg text-gray-600 mb-6">
+                  Our name &quot;Ubuntu&quot; reflects our belief in the interconnectedness of all people and our commitment 
+                  to community-centered solutions. &quot;AfyaLink&quot; represents our mission to connect all aspects of 
+                  healthcare delivery through technology.
+                </p>
               <p className="text-lg text-gray-600">
                 Based in Dar es Salaam, we work closely with healthcare facilities across Tanzania to understand 
                 their unique challenges and develop solutions that are both technologically advanced and culturally 

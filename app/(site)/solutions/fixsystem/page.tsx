@@ -1,7 +1,6 @@
 import { PageHeader } from "@/components/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Clock, Shield, Wrench, MessageCircle } from "lucide-react";
 
 export default function FixSystemPage() {
@@ -27,7 +26,7 @@ export default function FixSystemPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-lg text-gray-600 mb-6">
-                  When medical equipment breaks down, it's not just an inconvenience — it's a matter of life and death. 
+                  When medical equipment breaks down, it&apos;s not just an inconvenience — it&apos;s a matter of life and death. 
                   Healthcare facilities in Tanzania face significant challenges with equipment maintenance, leading to:
                 </p>
                 <ul className="space-y-3">
@@ -132,7 +131,7 @@ export default function FixSystemPage() {
                 <h3 className="text-2xl font-semibold text-ink mb-4">Book via WhatsApp</h3>
                 <p className="text-gray-600 mb-6">
                   No need for complex booking systems. Simply send us a WhatsApp message with your equipment details 
-                  and we'll dispatch a technician immediately.
+                  and we&apos;ll dispatch a technician immediately.
                 </p>
                 <h3 className="text-2xl font-semibold text-ink mb-4">Track Status Online</h3>
                 <p className="text-gray-600">

@@ -1,10 +1,8 @@
 import { PageHeader } from "@/components/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { 
   Wrench, 
-  Bike, 
   Truck, 
   Users, 
   ArrowRight,
@@ -34,7 +32,7 @@ export default function JoinPage() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Whether you're a healthcare facility, manufacturer, or biomedical technician,
-              there's a place for you in our mission to transform healthcare in Tanzania.
+              there&apos;s a place for you in our mission to transform healthcare in Tanzania.
             </p>
           </div>
 
@@ -222,7 +220,7 @@ export default function JoinPage() {
                   <div>
                     <h3 className="font-semibold text-ink mb-2">Make a Real Impact</h3>
                     <p className="text-gray-600">
-                      Be part of a mission that's improving healthcare access and saving lives across Tanzania
+                      Be part of a mission that&apos;s improving healthcare access and saving lives across Tanzania
                     </p>
                   </div>
                 </div>

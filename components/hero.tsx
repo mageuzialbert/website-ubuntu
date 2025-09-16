@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, UserPlus, Wrench } from "lucide-react";
+import { UserPlus, Wrench } from "lucide-react";
 
 export function Hero() {
   return (

@@ -4,10 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
   Building2, 
-  Wrench, 
   Zap, 
-  Clock, 
-  Heart, 
   Leaf, 
   Users, 
   TrendingUp 
@@ -70,8 +67,8 @@ export default function ImpactPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    "Since implementing Ubuntu FixSystem, our equipment downtime has reduced by 75% and 
-                    maintenance costs have decreased by 40%, saving us TZS 1.8M monthly. We can now serve 30% more patients daily."
+                    &quot;Since implementing Ubuntu FixSystem, our equipment downtime has reduced by 75% and 
+                    maintenance costs have decreased by 40%, saving us TZS 1.8M monthly. We can now serve 30% more patients daily.&quot;
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary">75% less downtime</Badge>
@@ -95,8 +92,8 @@ export default function ImpactPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    "GreenPower+ 2.0 has transformed our energy infrastructure. We've reduced our energy 
-                    costs by 60%, saving TZS 3.2M monthly, and achieved 100% uptime for critical equipment."
+                    &quot;GreenPower+ 2.0 has transformed our energy infrastructure. We&apos;ve reduced our energy 
+                    costs by 60%, saving TZS 3.2M monthly, and achieved 100% uptime for critical equipment.&quot;
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary">60% energy savings</Badge>
@@ -143,7 +140,7 @@ export default function ImpactPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    We've created 150+ local jobs and trained 200+ technicians, while improving 
+                    We&apos;ve created 150+ local jobs and trained 200+ technicians, while improving 
                     healthcare access for over 50,000 patients across Tanzania.
                   </p>
                   <ul className="space-y-2 text-sm text-gray-600">

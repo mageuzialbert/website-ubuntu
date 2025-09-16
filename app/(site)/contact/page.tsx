@@ -24,7 +24,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Send us a message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you within 24 hours.
+                Fill out the form below and we&apos;ll get back to you within 24 hours.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -96,7 +96,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle>Get in Touch</CardTitle>
                 <CardDescription>
-                  We're here to help transform healthcare in Tanzania.
+                  We&apos;re here to help transform healthcare in Tanzania.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
