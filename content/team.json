@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Anodi Kaihula",
+    "role": "CEO",
+    "linkedin": "https://www.linkedin.com/in/anodi-kaihula-9313101a3/",
+    "photo": "/images/placeholders/arnold.WEBP"
+  },
+  {
+    "name": "Dr. Albert Mageuzi",
+    "role": "CTO",
+    "linkedin": "https://www.linkedin.com/in/albert-mageuzi-6b74771b6/",
+    "photo": "/images/placeholders/albert.WEBP"
+  },
+  {
+    "name": "Idda Abel",
+    "role": "CFO",
+    "linkedin": "https://www.linkedin.com/in/idda-abel-450a11278/",
+    "photo": "/images/placeholders/idda.WEBP"
+  }
+]

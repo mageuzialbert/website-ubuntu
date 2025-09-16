@@ -17,7 +17,7 @@
     --secondary-foreground: 222.2 84% 4.9%;
     --muted: 210 40% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
+    --accent: 199 89% 48%;
     --accent-foreground: 222.2 84% 4.9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -40,7 +40,7 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 199 89% 48%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -56,28 +56,61 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter), 'Inter', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif;
   }
 }
 
 @layer components {
   .gradient-brand {
-    @apply bg-gradient-to-br from-brand to-accent;
+    background: linear-gradient(to bottom right, #16A34A, #0EA5E9);
   }
   
   .card-rounded {
-    @apply rounded-2xl;
+    border-radius: 1rem;
   }
   
   .shadow-subtle {
-    @apply shadow-lg shadow-black/5;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+  
+  .focus-ring:focus-visible {
+    --tw-ring-color: #16A34A;
+  }
+  
+  /* Ensure proper button styling */
+  .btn-primary {
+    background-color: #16A34A;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #15803D;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    color: #16A34A;
+    border: 2px solid #16A34A;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  
+  .btn-outline:hover {
+    background-color: #16A34A;
+    color: white;
   }
 }
 

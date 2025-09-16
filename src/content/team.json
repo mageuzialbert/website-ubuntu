@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Dr. Sarah Mwangi",
+    "role": "CEO & Co-Founder",
+    "linkedin": "https://linkedin.com/in/sarah-mwangi",
+    "photo": "/images/placeholders/team-sarah.jpg"
+  },
+  {
+    "name": "James Kilonzo",
+    "role": "CTO & Co-Founder",
+    "linkedin": "https://linkedin.com/in/james-kilonzo",
+    "photo": "/images/placeholders/team-james.jpg"
+  },
+  {
+    "name": "Amina Hassan",
+    "role": "Head of Operations",
+    "linkedin": "https://linkedin.com/in/amina-hassan",
+    "photo": "/images/placeholders/team-amina.jpg"
+  }
+]

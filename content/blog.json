@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "healthcare-energy-revolution-tanzania",
+    "title": "The Healthcare Energy Revolution in Tanzania",
+    "excerpt": "How renewable energy is transforming healthcare delivery across Tanzania, reducing costs by up to TZS 3.2M monthly and improving patient outcomes.",
+    "date": "2024-01-15",
+    "author": "Dr. Sarah Mwangi",
+    "category": "Energy"
+  },
+  {
+    "slug": "preventive-maintenance-medical-equipment",
+    "title": "Why Preventive Maintenance Saves Lives",
+    "excerpt": "The critical importance of regular medical equipment maintenance in healthcare facilities and how it impacts patient safety.",
+    "date": "2024-01-10",
+    "author": "James Kilonzo",
+    "category": "Maintenance"
+  },
+  {
+    "slug": "digital-transformation-tanzanian-healthcare",
+    "title": "Digital Transformation in Tanzanian Healthcare",
+    "excerpt": "Exploring how technology is revolutionizing healthcare delivery in Tanzania, from patient booking to equipment management.",
+    "date": "2024-01-05",
+    "author": "Amina Hassan",
+    "category": "Technology"
+  }
+]

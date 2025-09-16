@@ -1,0 +1,37 @@
+[
+  {
+    "id": "fixsystem",
+    "title": "Ubuntu FixSystem",
+    "description": "Preventive maintenance subscriptions, repair-on-demand, and certified national network for medical equipment.",
+    "icon": "wrench",
+    "enabled": true
+  },
+  {
+    "id": "greenpower",
+    "title": "GreenPower+",
+    "description": "Integrated energy & climate resilience solutions with smart solar and storage systems.",
+    "icon": "zap",
+    "enabled": true
+  },
+  {
+    "id": "booking-feedback",
+    "title": "Booking & Feedback",
+    "description": "Patient booking widget with payments, QR feedback, and AI analytics for facilities.",
+    "icon": "calendar",
+    "enabled": true
+  },
+  {
+    "id": "medxpress",
+    "title": "MedXpress",
+    "description": "Fast medical supply delivery network across Tanzania.",
+    "icon": "truck",
+    "enabled": false
+  },
+  {
+    "id": "afyalink-app",
+    "title": "AfyaLink App",
+    "description": "Mobile app for patients to book appointments and track health services.",
+    "icon": "smartphone",
+    "enabled": false
+  }
+]

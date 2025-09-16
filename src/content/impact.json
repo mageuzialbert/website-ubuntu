@@ -1,0 +1,25 @@
+{
+  "facilitiesOnboarded": 6,
+  "metrics": [
+    {
+      "label": "Facilities Onboarded",
+      "value": 6,
+      "description": "Healthcare facilities using our solutions"
+    },
+    {
+      "label": "Equipment Repaired",
+      "value": 150,
+      "description": "Medical devices serviced this year"
+    },
+    {
+      "label": "Energy Saved",
+      "value": "25%",
+      "description": "Average energy cost reduction"
+    },
+    {
+      "label": "Response Time",
+      "value": "2hrs",
+      "description": "Average repair response time"
+    }
+  ]
+}
