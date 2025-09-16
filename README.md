@@ -2,6 +2,8 @@
 
 A production-ready Next.js 14 + TypeScript + Tailwind + shadcn/ui application for healthcare technology solutions in Tanzania.
 
+<!-- Force deployment update -->
+
 ## 🚀 Features
 
 - **Modern Tech Stack**: Next.js 14 with App Router, TypeScript, Tailwind CSS, and shadcn/ui
