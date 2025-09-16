@@ -181,7 +181,7 @@ export default function ResourcesPage() {
                               {article.source} • {article.date}
                             </CardDescription>
                           </div>
-                          <Badge variant="outline">{article.type}</Badge>
+                          <Badge variant="outline">{article.source}</Badge>
                         </div>
                       </CardHeader>
                       <CardContent>
