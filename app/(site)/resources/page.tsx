@@ -185,7 +185,7 @@ export default function ResourcesPage() {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                        <p className="text-gray-600 mb-4">{article.description}</p>
                         <Button variant="outline" asChild>
                           <a href={article.url} target="_blank" rel="noopener noreferrer">
                             Read Article
