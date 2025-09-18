@@ -271,7 +271,7 @@ export default function AfyaSolarPage() {
                   Case Study
                 </h2>
                 <blockquote className="text-lg text-gray-700 text-center italic mb-6">
-                  "Mtera health center in Tanga reduced power costs by 40% while ensuring uninterrupted neonatal care with AfyaSolar."
+                  &quot;Mtera health center in Tanga reduced power costs by 40% while ensuring uninterrupted neonatal care with AfyaSolar.&quot;
                 </blockquote>
                 <div className="text-center">
                   <p className="text-sm text-gray-600">
@@ -338,7 +338,7 @@ export default function AfyaSolarPage() {
                   </p>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-600 italic">
-                      "When power is stable, care is reliable. That's what GreenPower+ guarantees."
+                      &quot;When power is stable, care is reliable. That&apos;s what GreenPower+ guarantees.&quot;
                     </p>
                   </div>
                 </CardContent>

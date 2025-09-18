@@ -37,7 +37,7 @@ export function Hero() {
     }, 4000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
   
   return (
     <section className="relative overflow-hidden">

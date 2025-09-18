@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Zap, Wrench, Users, TrendingUp, Heart } from "lucide-react";
+import { Zap, Wrench, Users, TrendingUp, Heart } from "lucide-react";
 
 export function WhyUbuntu() {
   const reasons = [
