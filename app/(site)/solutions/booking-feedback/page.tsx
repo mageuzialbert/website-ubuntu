@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { 
   Calendar, 
   Smartphone, 
@@ -16,7 +17,7 @@ export default function BookingFeedbackPage() {
   return (
     <>
       <PageHeader
-        title="Booking & Feedback"
+        title="AfyaBooking"
         description="Patient booking widget with payments, QR feedback, and AI analytics for healthcare facilities"
         breadcrumb={[
           { label: "Home", href: "/" },
@@ -99,6 +100,24 @@ export default function BookingFeedbackPage() {
                   </CardDescription>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+
+          {/* Booking Process Infographic */}
+          <div className="mb-16">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold font-heading text-ink mb-8">
+                How It Works
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <Image 
+                  src="/images/booking.png"
+                  alt="Ubuntu AfyaBooking Process - Book, Confirm, Serve, Analyze"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
             </div>
           </div>
 

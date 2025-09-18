@@ -19,8 +19,8 @@ export function Navbar() {
     <nav className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+          {/* Logo and Site Name */}
+          <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/images/logo.png"
               alt="Ubuntu AfyaLink"
@@ -28,44 +28,42 @@ export function Navbar() {
               height={40}
               className="h-8 w-auto"
             />
+            <span className="text-xl font-bold text-green-600">Ubuntu AfyaLink</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-brand transition-colors">
-              Home
-            </Link>
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-1">
-                  Solutions
+                  Our Solutions
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <Link href="/solutions/fixsystem">FixSystem</Link>
+                  <Link href="/solutions/greenpower">AfyaSolar</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/solutions/greenpower">GreenPower+</Link>
+                  <Link href="/solutions/fixsystem">MedFix</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/solutions/booking-feedback">Booking & Feedback</Link>
+                  <Link href="/solutions/booking-feedback">AfyaBooking</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             <Link href="/about" className="text-gray-700 hover:text-brand transition-colors">
-              About
+              About Us
             </Link>
-            <Link href="/impact" className="text-gray-700 hover:text-brand transition-colors">
+            {/*<Link href="/impact" className="text-gray-700 hover:text-brand transition-colors">
               Impact
             </Link>
             <Link href="/join" className="text-gray-700 hover:text-brand transition-colors">
               Join Us
             </Link>
-            {/* <Link href="/resources" className="text-gray-700 hover:text-brand transition-colors">
+             <Link href="/resources" className="text-gray-700 hover:text-brand transition-colors">
               Resources
             </Link> */}
             <Link href="/contact" className="text-gray-700 hover:text-brand transition-colors">
@@ -96,62 +94,35 @@ export function Navbar() {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <Link
-                href="/"
-                className="block px-3 py-2 text-gray-700 hover:text-brand"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </Link>
+
               <Link
                 href="/solutions/fixsystem"
                 className="block px-3 py-2 text-gray-700 hover:text-brand"
                 onClick={() => setIsOpen(false)}
               >
-                FixSystem
+                Ubuntu MedFix
               </Link>
               <Link
                 href="/solutions/greenpower"
                 className="block px-3 py-2 text-gray-700 hover:text-brand"
                 onClick={() => setIsOpen(false)}
               >
-                GreenPower+
+                AfyaSolar
               </Link>
               <Link
                 href="/solutions/booking-feedback"
                 className="block px-3 py-2 text-gray-700 hover:text-brand"
                 onClick={() => setIsOpen(false)}
               >
-                Booking & Feedback
+                Ubuntu AfyaBooking
               </Link>
               <Link
                 href="/about"
                 className="block px-3 py-2 text-gray-700 hover:text-brand"
                 onClick={() => setIsOpen(false)}
               >
-                About
+                About Us
               </Link>
-              <Link
-                href="/impact"
-                className="block px-3 py-2 text-gray-700 hover:text-brand"
-                onClick={() => setIsOpen(false)}
-              >
-                Impact
-              </Link>
-              <Link
-                href="/join"
-                className="block px-3 py-2 text-gray-700 hover:text-brand"
-                onClick={() => setIsOpen(false)}
-              >
-                Join Us
-              </Link>
-              {/* <Link
-                href="/resources"
-                className="block px-3 py-2 text-gray-700 hover:text-brand"
-                onClick={() => setIsOpen(false)}
-              >
-                Resources
-              </Link> */}
               <Link
                 href="/contact"
                 className="block px-3 py-2 text-gray-700 hover:text-brand"

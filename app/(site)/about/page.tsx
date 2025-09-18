@@ -24,15 +24,15 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="About Ubuntu AfyaLink"
-        description="Transforming healthcare delivery across Tanzania through innovative technology solutions"
+        title="Redefining Healthcare Efficiency in Africa."
+        description="Ubuntu AfyaLink was founded with one mission: to empower primary health facilities with reliable energy, resilient equipment, and smarter patient engagement systems, because every patient deserves quality care, every time."
         breadcrumb={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mission, Vision, Values */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
             <Card className="card-rounded shadow-subtle">
               <CardHeader>
                 <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
@@ -69,14 +69,14 @@ export default function AboutPage() {
           {/* Who We Are */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold font-heading text-ink mb-8 text-center">
-              Who We Are
+              Our Story
             </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-600 mb-6">
-                Ubuntu AfyaLink was founded in 2023 by a team of healthcare
-                professionals, engineers, and entrepreneurs who recognized the
-                critical need for integrated technology solutions in Tanzanian
-                healthcare facilities.
+                Born in Tanzania, Built for Africa.
+Ubuntu AfyaLink began with a simple observation from our own lived experince, thousands of clinics across Tanzania struggle daily with unreliable power, broken biomedical equipment, and inefficient patient management. The consequences are severe - vaccines spoil, patients are turned away, and healthcare workers are overwhelmed.
+We decided to change that.
+
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 Our name &quot;Ubuntu&quot; reflects our belief in the
@@ -86,10 +86,7 @@ export default function AboutPage() {
                 through technology.
               </p>
               <p className="text-lg text-gray-600">
-                Based in Dar es Salaam, we work closely with healthcare
-                facilities across Tanzania to understand their unique challenges
-                and develop solutions that are both technologically advanced and
-                culturally appropriate for the local context.
+                Founded by a team of young innovators passionate about health and technology, Ubuntu AfyaLink combines clean energy, smart maintenance, and digital engagement into one ecosystem. From powering primary health facilities to ensuring life-saving machines work when they’re needed most, we’re building resilience into healthcare, one clinic at a time.
               </p>
             </div>
           </div>
@@ -212,23 +209,166 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Our Impact */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold font-heading text-ink mb-12 text-center">
+              Our Impact
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="card-rounded shadow-subtle text-center">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">⚡</div>
+                  <h3 className="text-xl font-semibold text-ink mb-2">6 Clinics Powered</h3>
+                  <p className="text-gray-600">
+                    with GreenPower+ clean energy systems up to date.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle text-center">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">🌍</div>
+                  <h3 className="text-xl font-semibold text-ink mb-2">5,000+ Patients Reached</h3>
+                  <p className="text-gray-600">
+                    through improved services.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle text-center">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">💡</div>
+                  <h3 className="text-xl font-semibold text-ink mb-2">20+ Tons CO₂ Reduced</h3>
+                  <p className="text-gray-600">
+                    cutting reliance on diesel generators.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle text-center">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">👩‍🔧</div>
+                  <h3 className="text-xl font-semibold text-ink mb-2">10+ Technicians Empowered</h3>
+                  <p className="text-gray-600">
+                    including women breaking barriers in STEM.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle text-center">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">🏥</div>
+                  <h3 className="text-xl font-semibold text-ink mb-2">95% Equipment Uptime</h3>
+                  <p className="text-gray-600">
+                    achieved with MedFix System.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Why Us? */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold font-heading text-ink mb-12 text-center">
+              Why Us?
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <Card className="card-rounded shadow-subtle">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <Zap className="h-6 w-6 text-brand" />
+                    </div>
+                    Integrated Ecosystem
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    Energy + Maintenance + Engagement in one platform.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <TrendingUp className="h-6 w-6 text-brand" />
+                    </div>
+                    Data + Human Stories
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    We combine analytics (ROI, savings, uptime) with real impact stories (lives saved, technicians trained).
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <Users2 className="h-6 w-6 text-brand" />
+                    </div>
+                    Scalable Model
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    From small clinics to large hospitals, our pay-as-you-go and rent-to-own systems grow with need.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <Hand className="h-6 w-6 text-brand" />
+                    </div>
+                    Built in Africa, for Africa
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    Local insight, local talent, global ambition.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
           {/* Backed By */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold font-heading text-ink mb-8 text-center">
               Backed By
             </h2>
-            <div className="flex justify-center items-center">
-              <div className="bg-gray-100 p-8 rounded-2xl">
-                <Image
-                  src="/logos/undp.png"
-                  alt="UNDP Logo"
-                  width={200}
-                  height={100}
-                  className="opacity-60"
-                />
+            <div className="flex justify-center">
+              <div className="overflow-hidden w-full max-w-3xl">
+                <div className="flex space-x-12 justify-center">
+                  <div className="bg-gray-50 p-6 rounded-xl shadow-sm flex items-center justify-center min-w-[250px]">
+                    <Image
+                      src="/logos/undp.png"
+                      alt="UNDP Logo"
+                      width={200}
+                      height={100}
+                      className="opacity-90"
+                    />
+                  </div>
+                  
+                  <div className="bg-gray-50 p-6 rounded-xl shadow-sm flex items-center justify-center min-w-[250px]">
+                    <Image
+                      src="/logos/ue.png"
+                      alt="UE Logo"
+                      width={200}
+                      height={100}
+                      className="opacity-90"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            {/* TODO(ipab): Add more partner logos here */}
           </div>
 
           {/* CTA Section */}

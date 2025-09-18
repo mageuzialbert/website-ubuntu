@@ -23,8 +23,8 @@ export function Highlights() {
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-ink mb-4">
             Our Solutions
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive healthcare technology solutions designed for the Tanzanian market
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+            Ubuntu AfyaLink solutions work better together. Power your facility, keep your machines running, and delight patients - all in one ecosystem.
           </p>
         </div>
 
@@ -41,24 +41,50 @@ export function Highlights() {
                     </div>
                     <CardTitle className="text-xl font-heading">{highlight.title}</CardTitle>
                   </div>
-                  <CardDescription className="text-gray-600">
+                  <CardDescription className="text-gray-600 mb-4">
                     {highlight.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Link 
-                    href={`/solutions/${highlight.id}`}
-                    className="inline-flex items-center text-brand hover:text-brand-700 font-medium"
-                  >
-                    Learn More →
-                  </Link>
+                  {highlight.features && (
+                    <ul className="space-y-2 mb-6">
+                      {highlight.features.map((feature, index) => (
+                        <li key={index} className="text-sm text-gray-600 flex items-start">
+                          <span className="text-brand mr-2">•</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {highlight.cta && (
+                    <Link 
+                      href={`/solutions/${highlight.id}`}
+                      className="block w-full bg-brand hover:bg-brand-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors"
+                    >
+                      {highlight.cta}
+                    </Link>
+                  )}
                 </CardContent>
               </Card>
             );
           })}
         </div>
+        
+       {/* <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold font-heading text-ink mb-6">
+            Our solutions work better together
+          </h3>
+          <div className="bg-white p-4 md:p-8 rounded-xl shadow-subtle inline-block">
+            <img 
+              src="/images/solutions.png" 
+              alt="Ubuntu AfyaLink Solutions Integration Infographic" 
+              className="max-w-full h-auto rounded-lg"
+              style={{ maxHeight: "500px" }}
+            />
+          </div>
+        </div>
 
-        {/* Commented out disabled highlights */}
+         Commented out disabled highlights */}
         {/* 
         <div className="mt-8 text-center">
           <p className="text-gray-500 text-sm">

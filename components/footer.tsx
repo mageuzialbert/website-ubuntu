@@ -22,11 +22,13 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-4">
-              End-to-end solutions for healthcare facilities, pharmacies, and patients — all on one platform.
+              With every facility powered, every machine maintained, and every patient engaged, Ubuntu AfyaLink is building the future of healthcare. Join us in making it happen.
             </p>
             <p className="text-gray-400 text-sm">
-              Based in Tanzania 🇹🇿
-            </p>
+              Location: Magomeni Usalama, Chekanao Street, House No. 04, Dar es Salaam, 
+               Email: info@ubuntuafyalink.co.tz | Phone: +255 656721324
+
+            </p> 
           </div>
 
           {/* Quick Links */}
@@ -40,17 +42,17 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/solutions/fixsystem" className="text-gray-300 hover:text-white transition-colors">
-                  FixSystem
+                  Ubuntu MedFix
                 </Link>
               </li>
               <li>
                 <Link href="/solutions/greenpower" className="text-gray-300 hover:text-white transition-colors">
-                  GreenPower+
+                  AfyaSolar
                 </Link>
               </li>
               <li>
                 <Link href="/solutions/booking-feedback" className="text-gray-300 hover:text-white transition-colors">
-                  Booking & Feedback
+                  Ubuntu AfyaBooking
                 </Link>
               </li>
               <li>
@@ -58,32 +60,47 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Connect with Us */}
           <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
+            <h4 className="font-semibold mb-4">Connect with Us</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
-                  Blog
-                </Link>
+                <a 
+                  href="https://www.linkedin.com/company/ubuntu-afyalink/?viewAsMember=true" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li>
-                <Link href="/resources#faqs" className="text-gray-300 hover:text-white transition-colors">
-                  FAQs
-                </Link>
+                <a 
+                  href="https://x.com/Ubuntu_Afyalink?t=i6VTkgsi8IZ4yueLcLwjkA&s=09" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Twitter/X
+                </a>
               </li>
               <li>
-                <Link href="/join" className="text-gray-300 hover:text-white transition-colors">
-                  Join Our Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/impact" className="text-gray-300 hover:text-white transition-colors">
-                  Our Impact
-                </Link>
+                <a 
+                  href="https://www.instagram.com/ubuntu_afyalink?igsh=MTZhNGh6eWZha2Jjdw==" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Instagram
+                </a>
               </li>
             </ul>
           </div>

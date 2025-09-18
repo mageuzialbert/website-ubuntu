@@ -1,24 +1,42 @@
 [
   {
-    "id": "fixsystem",
-    "title": "Ubuntu FixSystem",
-    "description": "Preventive maintenance subscriptions, repair-on-demand, and certified national network for medical equipment.",
-    "icon": "wrench",
-    "enabled": true
+    "id": "greenpower",
+    "title": "AfyaSolar",
+    "description": "Affordable, efficient, and customized solar energy solutions designed for off-grid and on-grid health facilities.",
+    "icon": "zap",
+    "enabled": true,
+    "features": [
+      "Cut energy costs by up to 40%",
+      "Reliable power for critical medical equipment",
+      "Delivered with financing options"
+    ],
+    "cta": "Light Up Your Clinic, Save on Bills by 40%"
   },
   {
-    "id": "greenpower",
-    "title": "GreenPower+",
-    "description": "Integrated energy & climate resilience solutions with smart solar and storage systems.",
-    "icon": "zap",
-    "enabled": true
+    "id": "fixsystem",
+    "title": "Ubuntu MedFix",
+    "description": "Preventive and on-demand biomedical equipment maintenance services.",
+    "icon": "wrench",
+    "enabled": true,
+    "features": [
+      "Subscription-based model for affordability",
+      "AI-powered diagnostics for faster repair insights",
+      "Integrated WhatsApp booking for convenience"
+    ],
+    "cta": "One Breakdown Can Cost Lives - Prevent It Today"
   },
   {
     "id": "booking-feedback",
-    "title": "Booking & Feedback",
-    "description": "Patient booking widget with payments, QR feedback, and AI analytics for facilities.",
+    "title": "Ubuntu AfyaBooking",
+    "description": "A simple, integrated tool that helps facilities manage bookings, collect patient feedback, and track service quality.",
     "icon": "calendar",
-    "enabled": true
+    "enabled": true,
+    "features": [
+      "WhatsApp-enabled booking system",
+      "Custom QR codes for real-time feedback",
+      "AI-driven feedback analytics to improve care delivery"
+    ],
+    "cta": "Get Bookings & Patient Feedback Instantly Now!"
   },
   {
     "id": "medxpress",

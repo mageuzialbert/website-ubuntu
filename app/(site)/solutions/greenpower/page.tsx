@@ -2,29 +2,31 @@ import { PageHeader } from "@/components/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
   Zap, 
   Sun, 
   Battery, 
   Brain, 
-  Recycle, 
-  Leaf, 
   DollarSign, 
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Shield,
+  TrendingUp,
+  Wrench,
+  BarChart3,
+  Lightbulb
 } from "lucide-react";
 
-export default function GreenPowerPage() {
+export default function AfyaSolarPage() {
   return (
     <>
       <PageHeader
-        title="Ubuntu GreenPower+ 2.0"
-        description="Integrated Energy & Climate Resilience for Health"
+        title="AfyaSolar - Reliable Clean Energy for Health Facilities"
+        description="Clean, Affordable, and Sustainable Energy Solutions for Primary Healthcare facilities in Tanzania."
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Solutions", href: "/solutions" },
-          { label: "GreenPower+" }
+          { label: "AfyaSolar" }
         ]}
       />
 
@@ -32,422 +34,345 @@ export default function GreenPowerPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-brand/10 text-brand">Latest Version</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold font-heading text-ink mb-6">
-              Ubuntu GreenPower+ 2.0
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Integrated Energy & Climate Resilience for Health — Complete end-to-end energy ecosystem 
-              designed specifically for Tanzanian healthcare facilities
+            <Badge className="mb-4 bg-brand/10 text-brand">Clean Energy Solution</Badge>
+            
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto">
+              AfyaSolar by Ubuntu AfyaLink provides customized solar energy systems designed to power primary health facilities, hospitals, and rural clinics. We help you cut costs, stay reliable, and ensure uninterrupted care for patients - even in off-grid communities.
             </p>
           </div>
 
-          {/* Main Content Accordion */}
+          {/* The Reality on the Ground */}
           <div className="mb-16">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="problem">
-                <AccordionTrigger className="text-xl font-semibold">
-                  1. The Problem in Tanzania
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4">
-                    <p className="text-gray-600">
-                      Healthcare facilities in Tanzania face critical energy challenges that directly impact patient care:
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Zap className="h-5 w-5 text-red-500" />
-                            Unreliable Power Grid
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Frequent power outages disrupt critical medical procedures and equipment operation
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <DollarSign className="h-5 w-5 text-red-500" />
-                            High Diesel Costs
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Expensive backup generators consume 40-60% of facility energy budgets
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Sun className="h-5 w-5 text-red-500" />
-                            Vaccine Storage Losses
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Temperature-sensitive vaccines and medicines spoil during power outages
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <DollarSign className="h-5 w-5 text-red-500" />
-                            Upfront Investment Barrier
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            High initial costs prevent facilities from adopting renewable energy solutions
-                          </p>
-                        </CardContent>
-                      </Card>
+            <h2 className="text-3xl font-bold font-heading text-ink mb-8 text-center">
+              The Reality on the Ground
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 text-center max-w-4xl mx-auto">
+              Healthcare facilities in Tanzania face critical energy challenges that directly impact patient care:
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="card-rounded shadow-subtle border-l-4 border-l-red-500">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-red-100 rounded-lg">
+                      <Zap className="h-6 w-6 text-red-600" />
                     </div>
+                    <h3 className="font-semibold text-ink">Unreliable Power Grid</h3>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                  <p className="text-gray-600 text-sm">
+                    Frequent power outages disrupt critical medical procedures and equipment operation
+                  </p>
+                </CardContent>
+              </Card>
 
-              <AccordionItem value="model">
-                <AccordionTrigger className="text-xl font-semibold">
-                  2. Innovative Model: Localized King Energy Model
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-6">
-                    <p className="text-gray-600">
-                      Our revolutionary approach combines community solar microgrids with smart billing and shared infrastructure:
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <Card className="text-center">
-                        <CardHeader>
-                          <Sun className="h-12 w-12 text-brand mx-auto mb-4" />
-                          <CardTitle>Community Solar</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Multi-facility solar installations serving 10-20 healthcare facilities per cluster
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card className="text-center">
-                        <CardHeader>
-                          <Battery className="h-12 w-12 text-brand mx-auto mb-4" />
-                          <CardTitle>Smart Storage</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Intelligent battery systems with per-kWh billing and split-incentive solutions
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card className="text-center">
-                        <CardHeader>
-                          <Zap className="h-12 w-12 text-brand mx-auto mb-4" />
-                          <CardTitle>Microgrids</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Localized energy networks that can operate independently from the national grid
-                          </p>
-                        </CardContent>
-                      </Card>
+              <Card className="card-rounded shadow-subtle border-l-4 border-l-orange-500">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-orange-100 rounded-lg">
+                      <DollarSign className="h-6 w-6 text-orange-600" />
                     </div>
+                    <h3 className="font-semibold text-ink">High Diesel Costs</h3>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                  <p className="text-gray-600 text-sm">
+                    Expensive backup generators consume 40-60% of facility energy budgets and cause CO2 emissions
+                  </p>
+                </CardContent>
+              </Card>
 
-              <AccordionItem value="optimization">
-                <AccordionTrigger className="text-xl font-semibold">
-                  3. Dynamic Energy Optimization (Localized Soly Features)
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Brain className="h-5 w-5 text-brand" />
-                            Ubuntu Smart Contracts
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Dynamic tariff incentives based on time of day, energy demand, and grid stability
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Battery className="h-5 w-5 text-brand" />
-                            Ubuntu Powercell®
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Modular battery systems that can be scaled up as facility needs grow
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Brain className="h-5 w-5 text-brand" />
-                            Ubuntu Brain®
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            AI-powered controller that optimizes energy usage and predicts maintenance needs
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Zap className="h-5 w-5 text-brand" />
-                            Ubuntu VPP
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Virtual Power Plant that bundles clinics and sells unused capacity back to the grid
-                          </p>
-                        </CardContent>
-                      </Card>
+              <Card className="card-rounded shadow-subtle border-l-4 border-l-yellow-500">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-yellow-100 rounded-lg">
+                      <Shield className="h-6 w-6 text-yellow-600" />
                     </div>
+                    <h3 className="font-semibold text-ink">Vaccine Storage Losses</h3>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                  <p className="text-gray-600 text-sm">
+                    Temperature-sensitive vaccines and medicines spoil during power outages
+                  </p>
+                </CardContent>
+              </Card>
 
-              <AccordionItem value="circular">
-                <AccordionTrigger className="text-xl font-semibold">
-                  4. Circular Economy & Recycling
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4">
-                    <p className="text-gray-600">
-                      Our commitment to sustainability extends beyond energy generation:
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Recycle className="h-5 w-5 text-brand" />
-                            Local Refurbishment Units
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Local workshops that refurbish and upgrade existing equipment for energy efficiency
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle className="flex items-center gap-2">
-                            <Leaf className="h-5 w-5 text-brand" />
-                            Zero-Waste Tracking
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Ubuntu Waste Tracker ensures all components are recycled or properly disposed of
-                          </p>
-                        </CardContent>
-                      </Card>
+              <Card className="card-rounded shadow-subtle border-l-4 border-l-purple-500">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-purple-100 rounded-lg">
+                      <TrendingUp className="h-6 w-6 text-purple-600" />
                     </div>
+                    <h3 className="font-semibold text-ink">Upfront Investment Barrier</h3>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                  <p className="text-gray-600 text-sm">
+                    High initial costs prevent facilities from adopting renewable energy solutions
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
 
-              <AccordionItem value="carbon">
-                <AccordionTrigger className="text-xl font-semibold">
-                  5. AI-Powered Carbon Footprinting
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4">
-                    <p className="text-gray-600">
-                      Advanced carbon tracking and ESG reporting capabilities:
-                    </p>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Product carbon tracking across the entire supply chain</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Supplier Bill of Materials analysis for quick PCF calculation</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Actionable ESG data for procurement leverage</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Automated carbon credit generation and trading</span>
-                      </li>
-                    </ul>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="revenue">
-                <AccordionTrigger className="text-xl font-semibold">
-                  6. Revenue Model
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4">
-                    <p className="text-gray-600">
-                      Flexible pricing designed to make renewable energy accessible:
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <Card className="text-center">
-                        <CardHeader>
-                          <CardTitle className="text-2xl text-brand">TZS 375-500/kWh</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">Energy pricing (vs TZS 750+ for diesel)</p>
-                        </CardContent>
-                      </Card>
-                      <Card className="text-center">
-                        <CardHeader>
-                          <CardTitle className="text-2xl text-brand">TZS 125,000-500,000/mo</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">Ubuntu Brain® & dashboard access</p>
-                        </CardContent>
-                      </Card>
-                      <Card className="text-center">
-                        <CardHeader>
-                          <CardTitle className="text-2xl text-brand">TZS 375,000</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">Refurbished equipment kits</p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="unique">
-                <AccordionTrigger className="text-xl font-semibold">
-                  7. Why Unique in Tanzania
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4">
-                    <p className="text-gray-600">
-                      Ubuntu GreenPower+ 2.0 is the only end-to-end energy ecosystem designed specifically for 
-                      Tanzanian healthcare facilities:
-                    </p>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Complete energy solution from generation to consumption</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Localized technology adapted for Tanzanian conditions</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Community-based approach reducing individual facility costs</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-brand mt-0.5" />
-                        <span className="text-gray-700">Integrated with existing healthcare workflows</span>
-                      </li>
-                    </ul>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="onebill">
-                <AccordionTrigger className="text-xl font-semibold">
-                  🔋 OneBill™ Module
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-6">
-                    <div className="bg-gradient-to-r from-brand/10 to-accent/10 p-6 rounded-2xl">
-                      <h3 className="text-2xl font-bold text-ink mb-2">One Bill. One Payment. Full Transparency.</h3>
-                      <p className="text-gray-600">
-                        The OneBill™ module consolidates all energy-related costs into a single, transparent bill 
-                        that facilities can easily understand and budget for.
-                      </p>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <Card>
-                        <CardHeader>
-                          <CardTitle>Consolidated Billing</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            All energy costs (generation, storage, maintenance) in one monthly bill
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle>Real-time Usage</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Live dashboard showing energy consumption and costs by department
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle>Predictive Analytics</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            AI-powered forecasting to help facilities plan and budget for energy costs
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader>
-                          <CardTitle>Cost Optimization</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            Automated recommendations to reduce energy consumption and costs
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <div className="text-center mt-8">
+              <p className="text-lg text-gray-700 font-medium">
+                AfyaSolar solves this with a sustainable, affordable, and long-term energy model.
+              </p>
+            </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center bg-gradient-to-r from-brand/5 to-accent/5 p-8 rounded-2xl">
-            <h2 className="text-3xl font-bold font-heading text-ink mb-4">
-              Ready to Transform Your Energy Infrastructure?
+          {/* Our AfyaSolar Solution */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold font-heading text-ink mb-8 text-center">
+              Our AfyaSolar Solution
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Get a comprehensive energy assessment for your healthcare facility and discover 
-              how much you can save with Ubuntu GreenPower+ 2.0
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <Card className="card-rounded shadow-subtle">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <Sun className="h-6 w-6 text-brand" />
+                    </div>
+                    <h3 className="font-semibold text-ink">Customized</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Designed, supplied, and installed to fit your facility's size and energy demand
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <Battery className="h-6 w-6 text-brand" />
+                    </div>
+                    <h3 className="font-semibold text-ink">Reliable Solar Systems</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Ensures 24/7 power for critical equipment (fridges, labs, maternity wards)
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <DollarSign className="h-6 w-6 text-brand" />
+                    </div>
+                    <h3 className="font-semibold text-ink">Lower Costs</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Save up to 40% compared to diesel and grid reliance
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <BarChart3 className="h-6 w-6 text-brand" />
+                    </div>
+                    <h3 className="font-semibold text-ink">Smart Monitoring Software</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Real-time system tracking for performance and predictive maintenance
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <CheckCircle className="h-6 w-6 text-brand" />
+                    </div>
+                    <h3 className="font-semibold text-ink">Flexible Financing</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Options for pay-as-you-use, leasing, NO UPFRONT COSTS
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <Lightbulb className="h-6 w-6 text-brand" />
+                    </div>
+                    <h3 className="font-semibold text-ink">Carbon Tracking</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Automated carbon credit generation and trading
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <Button size="lg" className="bg-brand hover:bg-brand-700 text-white">
+                Book a Free Energy Assessment/Audit
+              </Button>
+            </div>
+          </div>
+
+          {/* How It Works */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold font-heading text-ink mb-8 text-center">
+              How It Works
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-brand">1</span>
+                </div>
+                <h3 className="font-semibold text-ink mb-2">Assessment</h3>
+                <p className="text-gray-600 text-sm">
+                  We visit your facility, study your energy needs & costs
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-brand">2</span>
+                </div>
+                <h3 className="font-semibold text-ink mb-2">Design & Proposal</h3>
+                <p className="text-gray-600 text-sm">
+                  Tailored solar + battery storage plan
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-brand">3</span>
+                </div>
+                <h3 className="font-semibold text-ink mb-2">Installation</h3>
+                <p className="text-gray-600 text-sm">
+                  Quick, professional, and minimally disruptive
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-brand">4</span>
+                </div>
+                <h3 className="font-semibold text-ink mb-2">Monitoring & Maintenance</h3>
+                <p className="text-gray-600 text-sm">
+                  AI-powered dashboards + our Ubuntu Fix System for guaranteed uptime
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Case Study */}
+          <div className="mb-16">
+            <Card className="card-rounded shadow-subtle bg-gradient-to-r from-brand/5 to-brand/10">
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold font-heading text-ink mb-4 text-center">
+                  Case Study
+                </h2>
+                <blockquote className="text-lg text-gray-700 text-center italic mb-6">
+                  "Mtera health center in Tanga reduced power costs by 40% while ensuring uninterrupted neonatal care with AfyaSolar."
+                </blockquote>
+                <div className="text-center">
+                  <p className="text-sm text-gray-600">
+                    
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Why Choose AfyaSolar */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold font-heading text-ink mb-8 text-center">
+              Why Choose AfyaSolar?
+            </h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <Card className="card-rounded shadow-subtle">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <BarChart3 className="h-6 w-6 text-brand" />
+                    </div>
+                    Full Transparency
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    The Ubuntu software module consolidates all energy-related costs into a single, transparent bill that facilities can easily understand and budget for.
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-brand mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">Consolidated Billing: All energy costs (generation, storage, maintenance) in one monthly bill</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-brand mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">Real-time Usage: Live dashboard showing energy consumption and costs by department</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-brand mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">Predictive Analytics: AI-powered forecasting to help facilities plan and budget for energy costs</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-brand mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">Cost Optimization: Automated recommendations to reduce energy consumption and costs</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="card-rounded shadow-subtle">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 bg-brand/10 rounded-lg">
+                      <Brain className="h-6 w-6 text-brand" />
+                    </div>
+                    Ubuntu Brain
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    AI-powered controller that optimizes energy usage and predicts maintenance needs
+                  </p>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-600 italic">
+                      "When power is stable, care is reliable. That's what GreenPower+ guarantees."
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Get Started */}
+          <div className="text-center">
+            <h2 className="text-3xl font-bold font-heading text-ink mb-6">
+              Get Started With AfyaSolar
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+              Ready to power your facility with clean, reliable energy? Contact us today for a free energy audit and discover how AfyaSolar can save you money while powering patient care.
             </p>
-            <Button size="lg" className="bg-brand hover:bg-brand-700 text-white" asChild>
-              <a href="#" className="flex items-center gap-2">
-                Get Energy Assessment
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" className="bg-brand hover:bg-brand-700 text-white">
+                Request Your Free Audit Now
+              </Button>
+              <div className="text-gray-500">or</div>
+              <Button variant="outline" size="lg" className="flex items-center gap-2">
+                <Wrench className="h-4 w-4" />
+                Get a Maintenance Plan
                 <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
+              </Button>
+            </div>
+            
+            <p className="text-sm text-gray-500 mt-4">
+              Already powered? Keep your equipment safe with Ubuntu MedFix System
+            </p>
           </div>
         </div>
       </section>
     </>
   );
 }
-
