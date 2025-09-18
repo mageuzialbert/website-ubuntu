@@ -131,7 +131,7 @@ export default function AfyaSolarPage() {
                     <h3 className="font-semibold text-ink">Customized</h3>
                   </div>
                   <p className="text-gray-600 text-sm">
-                    Designed, supplied, and installed to fit your facility's size and energy demand
+                    Designed, supplied, and installed to fit your facility&apos;s size and energy demand
                   </p>
                 </CardContent>
               </Card>

@@ -4,13 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { 
-  Wrench, 
   Clock, 
   Shield, 
   MessageCircle, 
   Brain, 
   CheckCircle,
-  ArrowRight,
   AlertTriangle,
   TrendingUp,
   BarChart3,
@@ -336,7 +334,7 @@ export default function UbuntuMedFixPage() {
                   </p>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-600 italic">
-                      "We cut equipment downtime by 65% and reduced emergency repair costs thanks to Ubuntu FixSystem." - Mtera Hospital Director, Tanga
+                      &quot;We cut equipment downtime by 65% and reduced emergency repair costs thanks to Ubuntu FixSystem.&quot; - Mtera Hospital Director, Tanga
                     </p>
                   </div>
                 </CardContent>
@@ -350,7 +348,7 @@ export default function UbuntuMedFixPage() {
               Get Started Today
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-              Don't wait until your equipment fails. Subscribe to Ubuntu BioFixSystem today and keep your facility running at peak performance.
+              Don&apos;t wait until your equipment fails. Subscribe to Ubuntu BioFixSystem today and keep your facility running at peak performance.
             </p>
             
             <Button size="lg" className="bg-brand hover:bg-brand-700 text-white">

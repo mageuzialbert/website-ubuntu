@@ -113,7 +113,7 @@ export default function PrivacyPage() {
               We use reasonable technical and organizational safeguards (encryption, secure servers, access controls) to protect your data. However, no system is 100% secure — so we encourage you to protect your login credentials.
             </p>
 
-            <h2 className="text-2xl font-bold text-ink mb-6">7. Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-ink mb-6">7. Children&apos;s Privacy</h2>
             <p className="text-gray-700 mb-12">
               Our Service is not intended for children under 13. We do not knowingly collect data from children. If you believe a child has provided us information, please contact us to remove it.
             </p>
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-2xl font-bold text-ink mb-6">11. Changes to this Policy</h2>
             <p className="text-gray-700 mb-12">
-              We may update this Privacy Policy from time to time. Updates will be posted on this page with a new "Last Updated" date.
+              We may update this Privacy Policy from time to time. Updates will be posted on this page with a new &quot;Last Updated&quot; date.
             </p>
 
             <h2 className="text-2xl font-bold text-ink mb-6">12. Contact Us</h2>
