@@ -16,7 +16,7 @@ export default function PrivacyPage() {
             </p>
             
             <p className="text-lg text-gray-700 mb-8">
-              Ubuntu AfyaLink ("Company", "we", "our", "us") values your trust. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our services, solutions, and website www.ubuntuafyalink.co.tz (the "Service").
+              Ubuntu AfyaLink (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) values your trust. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our services, solutions, and website www.ubuntuafyalink.co.tz (the &quot;Service&quot;).
             </p>
             
             <p className="text-lg text-gray-700 mb-12">
