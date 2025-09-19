@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { Toaster } from "sonner";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -78,6 +79,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <WhatsAppFloat />
+          <Toaster position="top-right" richColors />
         </div>
       </body>
     </html>
