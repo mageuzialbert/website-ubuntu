@@ -226,7 +226,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-ink">Office</h3>
                     <p className="text-muted-foreground">
-                      Dar es Salaam, Tanzania<br />
+                      Magomeni Usalama, Chekanao Street, House No. 04, Dar es Salaam<br />
                     </p>
                   </div>
                 </div>
