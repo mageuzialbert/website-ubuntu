@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, MessageCircle, Loader2, CheckCircle, AlertCircle, Building2, Users, Wrench, ChevronDown, Upload, FileText } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Loader2, CheckCircle, AlertCircle, Building2, Users, Wrench, ChevronDown, Upload } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 
@@ -215,7 +215,7 @@ export default function ContactPage() {
         setSubmitStatus('error');
         toast.error(errorData.error || 'Failed to send message. Please try again.');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       toast.error('Network error. Please check your connection and try again.');
     } finally {
@@ -243,7 +243,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-paper">
       <PageHeader
-        title="We'd love to hear from you!"
+        title="We&apos;d love to hear from you!"
         description="Whether you're a healthcare facility seeking reliable solutions, an investor or partner exploring collaboration, or a talented professional looking to grow with us - this is your space to connect."
         breadcrumb={[
           { label: "Home", href: "/" },
@@ -653,7 +653,7 @@ export default function ContactPage() {
               
               <div className="text-center">
                 <p className="text-sm text-muted-foreground mb-4">
-                  We'll respond within 24 hours. Your details are safe with us.
+                  We&apos;ll respond within 24 hours. Your details are safe with us.
                 </p>
                 <Button variant="outline" className="w-full" asChild>
                   <a 
