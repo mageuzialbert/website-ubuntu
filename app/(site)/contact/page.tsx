@@ -258,7 +258,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Connect with Ubuntu AfyaLink</CardTitle>
               <CardDescription>
-                Tell us who you are and we'll show you the right form to get started.
+                Tell us who you are and we&apos;ll show you the right form to get started.
               </CardDescription>
               
               {/* Progress Bar */}
@@ -535,7 +535,7 @@ export default function ContactPage() {
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Tell us how you'd like to collaborate..."
+                        placeholder="Tell us how you&apos;d like to collaborate..."
                         rows={4}
                         disabled={isSubmitting}
                       />
@@ -617,7 +617,7 @@ export default function ContactPage() {
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Tell us why you'd like to join Ubuntu AfyaLink..."
+                        placeholder="Tell us why you&apos;d like to join Ubuntu AfyaLink..."
                         rows={4}
                         disabled={isSubmitting}
                       />
