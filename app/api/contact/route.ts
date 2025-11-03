@@ -66,16 +66,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter using your Titan email SMTP settings
+    // transporter using Titan email SMTP settings
     const transporter = nodemailer.createTransport({
-      host: 'smtp.titan.email',
-      port: 465,
-      secure: true, // true for 465, false for other ports
-      auth: {
-        user: 'info@ubuntuafyalink.co.tz',
-        pass: 'Kaihula@1998.',
-      },
-    });
+  host: process.env.SMTP_HOST || 'smtp.titan.email',
+  port: Number(process.env.SMTP_PORT || 465),
+  secure: true, // true for 465
+  auth: {
+    user: process.env.EMAIL_USER as string,    // set this too in Vercel
+    pass: process.env.EMAIL_PASS as string,    // your Vercel env var
+  },
+});
 
     // Generate user type specific content
     const getUserTypeLabel = (type: string) => {
