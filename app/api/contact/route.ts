@@ -250,7 +250,7 @@ Source: Ubuntu AfyaLink Website Contact Form
       }] : []
     };
 
-    // Save CV file to cloud storage (Vercel Blob) if provided
+    // Save CV file to cloud storage (Upstash R2) if provided
     let cvFilePath: string | null = null;
     if (cvFile) {
       try {

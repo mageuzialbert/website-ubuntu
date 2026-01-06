@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS contacts (
     district_name VARCHAR(255) DEFAULT NULL,
     cv_filename VARCHAR(255) DEFAULT NULL,
     cv_file_size INT DEFAULT NULL, -- Size in bytes
-    cv_file_path VARCHAR(500) DEFAULT NULL, -- URL to stored file in cloud storage (Vercel Blob Storage)
+    cv_file_path VARCHAR(500) DEFAULT NULL, -- URL to stored file in cloud storage (Upstash R2)
     
     -- Metadata
     email_sent TINYINT(1) DEFAULT 0,

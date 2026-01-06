@@ -62,11 +62,11 @@ SHOW CREATE TABLE contacts;
 
 ## CV File Storage
 
-CV files uploaded by talent are stored in **Vercel Blob Storage** (cloud storage):
-- **Storage**: Vercel Blob Storage (cloud-based, compatible with serverless)
+CV files uploaded by talent are stored in **Upstash R2** (S3-compatible object storage):
+- **Storage**: Upstash R2 (cloud-based, compatible with serverless)
 - **Naming**: Files are saved with format `cvs/{timestamp}-{contactId}-{originalname}.pdf`
 - **Database**: The file URL is stored in the `cv_file_path` column
-- **Access**: Files are stored as private by default
+- **Access**: Files are stored with public URLs by default
 - **Note**: Vercel's serverless environment doesn't support local file storage, so cloud storage is required
 
 ## Notes
