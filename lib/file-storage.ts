@@ -22,8 +22,8 @@ export async function saveCVFile(
   const buffer = Buffer.from(bytes);
 
   // Upload to Vercel Blob Storage
+  // Note: Files are private by default in Vercel Blob Storage
   const blob = await put(filename, buffer, {
-    access: 'private', // Files are private by default
     contentType: file.type || 'application/pdf',
     addRandomSuffix: false, // We're already using timestamps for uniqueness
   });
