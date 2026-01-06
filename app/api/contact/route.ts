@@ -31,6 +31,14 @@ export async function POST(request: NextRequest) {
     const districtId = formData.get('district') as string;
     const cvFile = formData.get('cvFile') as File | null;
 
+    // Validate CV file size (max 5MB)
+    if (cvFile && cvFile.size > 5 * 1024 * 1024) {
+      return NextResponse.json(
+        { error: 'CV file size exceeds 5MB limit' },
+        { status: 400 }
+      );
+    }
+
     // Fetch region and district names for talent if provided
     let regionName = '';
     let districtName = '';
@@ -186,6 +194,22 @@ export async function POST(request: NextRequest) {
       }
     };
 
+    // Prepare CV file attachment if provided
+    let cvAttachment: { filename: string; content: Buffer; contentType: string } | null = null;
+    if (cvFile) {
+      try {
+        const fileBuffer = Buffer.from(await cvFile.arrayBuffer());
+        cvAttachment = {
+          filename: cvFile.name,
+          content: fileBuffer,
+          contentType: cvFile.type || 'application/pdf'
+        };
+      } catch (fileError) {
+        console.error('Error processing CV file:', fileError);
+        // Continue without attachment if file processing fails
+      }
+    }
+
     // Email content
     const mailOptions = {
       from: 'info@ubuntuafyalink.co.tz',
@@ -275,11 +299,7 @@ Submitted: ${new Date().toLocaleString('en-US', {
 
 Source: Ubuntu AfyaLink Website Contact Form
       `,
-      attachments: cvFile ? [{
-        filename: cvFile.name,
-        content: Buffer.from(await cvFile.arrayBuffer()),
-        contentType: cvFile.type
-      }] : []
+      attachments: cvAttachment ? [cvAttachment] : []
     };
 
     // Send email (CV file will be attached if provided)
