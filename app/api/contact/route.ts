@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { query } from '@/lib/db';
-import { saveCVFile } from '@/lib/file-storage';
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,7 +17,8 @@ export async function POST(request: NextRequest) {
     
     // Healthcare specific fields
     const facilityType = formData.get('facilityType') as string;
-    const location = formData.get('location') as string;
+    const healthcareRegionId = formData.get('healthcareRegion') as string;
+    const healthcareDistrictId = formData.get('healthcareDistrict') as string;
     const solutionsInterested = formData.get('solutionsInterested') as string;
     
     // Investor specific fields
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     const districtId = formData.get('district') as string;
     const cvFile = formData.get('cvFile') as File | null;
 
-    // Fetch region and district names if provided
+    // Fetch region and district names for talent if provided
     let regionName = '';
     let districtName = '';
     if (regionId) {
@@ -61,6 +61,36 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Fetch region and district names for healthcare if provided
+    let healthcareRegionName = '';
+    let healthcareDistrictName = '';
+    if (healthcareRegionId) {
+      try {
+        const regionResult = await query<{ name: string }>(
+          'SELECT name FROM regions WHERE id = ?',
+          [healthcareRegionId]
+        );
+        if (regionResult.length > 0) {
+          healthcareRegionName = regionResult[0].name;
+        }
+      } catch (error) {
+        console.error('Error fetching healthcare region name:', error);
+      }
+    }
+    if (healthcareDistrictId) {
+      try {
+        const districtResult = await query<{ name: string }>(
+          'SELECT name FROM districts WHERE id = ?',
+          [healthcareDistrictId]
+        );
+        if (districtResult.length > 0) {
+          healthcareDistrictName = districtResult[0].name;
+        }
+      } catch (error) {
+        console.error('Error fetching healthcare district name:', error);
+      }
+    }
+
     // Validate required fields
     if (!userType || !firstName || !lastName || !email || !phone) {
       return NextResponse.json(
@@ -79,9 +109,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate user type specific fields
-    if (userType === 'healthcare' && (!facilityType || !location || !solutionsInterested)) {
+    if (userType === 'healthcare' && (!facilityType || !healthcareRegionId || !healthcareDistrictId || !solutionsInterested)) {
       return NextResponse.json(
-        { error: 'Missing required healthcare facility fields' },
+        { error: 'Missing required healthcare facility fields (facility type, region, district, and solutions interested are required)' },
         { status: 400 }
       );
     }
@@ -128,7 +158,8 @@ export async function POST(request: NextRequest) {
             <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #0ea5e9;">
               <h3 style="color: #0c4a6e; margin-top: 0;">Healthcare Facility Details</h3>
               <p><strong>Facility Type:</strong> ${facilityType}</p>
-              <p><strong>Location:</strong> ${location}</p>
+              ${healthcareRegionName ? `<p><strong>Region:</strong> ${healthcareRegionName}</p>` : ''}
+              ${healthcareDistrictName ? `<p><strong>District:</strong> ${healthcareDistrictName}</p>` : ''}
               <p><strong>Solutions Interested In:</strong> ${solutionsInterested ? JSON.parse(solutionsInterested).join(', ') : 'Not specified'}</p>
             </div>
           `;
@@ -209,7 +240,8 @@ ${organization ? `Organization: ${organization}` : ''}
 ${userType === 'healthcare' ? `
 Healthcare Facility Details:
 - Facility Type: ${facilityType}
-- Location: ${location}
+${healthcareRegionName ? `- Region: ${healthcareRegionName}` : ''}
+${healthcareDistrictName ? `- District: ${healthcareDistrictName}` : ''}
 - Solutions Interested In: ${solutionsInterested ? JSON.parse(solutionsInterested).join(', ') : 'Not specified'}
 ` : ''}
 
@@ -250,18 +282,7 @@ Source: Ubuntu AfyaLink Website Contact Form
       }] : []
     };
 
-    // Save CV file to cloud storage (Upstash R2) if provided
-    let cvFilePath: string | null = null;
-    if (cvFile) {
-      try {
-        cvFilePath = await saveCVFile(cvFile);
-      } catch (fileError) {
-        console.error('Error saving CV file:', fileError);
-        // Continue even if file save fails, but log the error
-      }
-    }
-
-    // Send email
+    // Send email (CV file will be attached if provided)
     let emailSent = false;
     let emailSentAt: Date | null = null;
     
@@ -280,15 +301,21 @@ Source: Ubuntu AfyaLink Website Contact Form
         ? JSON.stringify(JSON.parse(solutionsInterested))
         : null;
 
+      // Determine region/district based on user type (same columns used for both healthcare and talent)
+      const finalRegionId = userType === 'healthcare' ? healthcareRegionId : (userType === 'talent' ? regionId : null);
+      const finalRegionName = userType === 'healthcare' ? healthcareRegionName : (userType === 'talent' ? regionName : '');
+      const finalDistrictId = userType === 'healthcare' ? healthcareDistrictId : (userType === 'talent' ? districtId : null);
+      const finalDistrictName = userType === 'healthcare' ? healthcareDistrictName : (userType === 'talent' ? districtName : '');
+
       await query(
         `INSERT INTO contacts (
           user_type, first_name, last_name, email, phone, organization, message,
-          facility_type, location, solutions_interested,
+          facility_type, region_id, region_name, district_id, district_name, solutions_interested,
           collaboration_type,
-          area_of_expertise, years_of_experience, region_id, region_name, district_id, district_name,
-          cv_filename, cv_file_size, cv_file_path,
+          area_of_expertise, years_of_experience,
+          cv_filename, cv_file_size,
           email_sent, email_sent_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           userType,
           firstName,
@@ -299,20 +326,19 @@ Source: Ubuntu AfyaLink Website Contact Form
           message || null,
           // Healthcare fields
           facilityType || null,
-          location || null,
+          finalRegionId || null,
+          finalRegionName || null,
+          finalDistrictId || null,
+          finalDistrictName || null,
           solutionsInterestedJson,
           // Investor fields
           collaborationType || null,
           // Talent fields
           areaOfExpertise || null,
           yearsOfExperience ? parseInt(yearsOfExperience) : null,
-          regionId || null,
-          regionName || null,
-          districtId || null,
-          districtName || null,
+          // CV file info (no storage, just metadata)
           cvFile ? cvFile.name : null,
           cvFile ? cvFile.size : null,
-          cvFilePath,
           // Email status
           emailSent,
           emailSentAt

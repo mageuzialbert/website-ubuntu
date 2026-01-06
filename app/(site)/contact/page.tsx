@@ -21,7 +21,8 @@ interface FormData {
   message: string;
   // Healthcare specific
   facilityType: string;
-  location: string;
+  healthcareRegion: string;
+  healthcareDistrict: string;
   solutionsInterested: string[];
   // Investor specific
   collaborationType: string;
@@ -43,7 +44,8 @@ export default function ContactPage() {
     organization: '',
     message: '',
     facilityType: '',
-    location: '',
+    healthcareRegion: '',
+    healthcareDistrict: '',
     solutionsInterested: [],
     collaborationType: '',
     areaOfExpertise: '',
@@ -76,26 +78,37 @@ export default function ContactPage() {
     };
   }, []);
 
-  // Fetch regions when talent is selected
+  // Fetch regions when talent or healthcare is selected
   useEffect(() => {
-    if (formData.userType === 'talent') {
+    if (formData.userType === 'talent' || formData.userType === 'healthcare') {
       fetchRegions();
     } else {
-      // Reset region and district when switching away from talent
-      setFormData(prev => ({ ...prev, region: '', district: '' }));
+      // Reset region and district when switching away from talent/healthcare
+      setFormData(prev => ({ 
+        ...prev, 
+        region: '', 
+        district: '',
+        healthcareRegion: '',
+        healthcareDistrict: ''
+      }));
       setDistricts([]);
     }
   }, [formData.userType]);
 
-  // Fetch districts when region is selected
+  // Fetch districts when region is selected (for talent or healthcare)
   useEffect(() => {
-    if (formData.userType === 'talent' && formData.region) {
-      fetchDistricts(formData.region);
+    const regionId = formData.userType === 'talent' ? formData.region : formData.healthcareRegion;
+    if ((formData.userType === 'talent' || formData.userType === 'healthcare') && regionId) {
+      fetchDistricts(regionId);
     } else {
       setDistricts([]);
-      setFormData(prev => ({ ...prev, district: '' }));
+      if (formData.userType === 'talent') {
+        setFormData(prev => ({ ...prev, district: '' }));
+      } else if (formData.userType === 'healthcare') {
+        setFormData(prev => ({ ...prev, healthcareDistrict: '' }));
+      }
     }
-  }, [formData.region, formData.userType]);
+  }, [formData.region, formData.healthcareRegion, formData.userType]);
 
   const fetchRegions = async () => {
     setLoadingRegions(true);
@@ -165,7 +178,7 @@ export default function ContactPage() {
     const baseFields = 4; // userType, firstName, lastName, email
     switch (formData.userType) {
       case 'healthcare':
-        return baseFields + 4; // phone, facilityType, location, solutionsInterested, message
+        return baseFields + 5; // phone, facilityType, healthcareRegion, healthcareDistrict, solutionsInterested, message
       case 'investor':
         return baseFields + 3; // phone, organization, collaborationType, message
       case 'talent':
@@ -186,7 +199,8 @@ export default function ContactPage() {
       case 'healthcare':
         if (formData.phone) filled++;
         if (formData.facilityType) filled++;
-        if (formData.location) filled++;
+        if (formData.healthcareRegion) filled++;
+        if (formData.healthcareDistrict) filled++;
         if (formData.solutionsInterested.length > 0) filled++;
         if (formData.message) filled++;
         break;
@@ -269,7 +283,8 @@ export default function ContactPage() {
           organization: '',
           message: '',
           facilityType: '',
-          location: '',
+          healthcareRegion: '',
+          healthcareDistrict: '',
           solutionsInterested: [],
           collaborationType: '',
           areaOfExpertise: '',
@@ -506,18 +521,49 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="location" className="block text-sm font-medium text-ink mb-2">
-                        Location (Region + District) *
+                      <label htmlFor="healthcareRegion" className="block text-sm font-medium text-ink mb-2">
+                        Region *
                       </label>
-                      <Input 
-                        id="location" 
-                        name="location"
-                        value={formData.location}
+                      <select
+                        id="healthcareRegion"
+                        name="healthcareRegion"
+                        value={formData.healthcareRegion}
                         onChange={handleInputChange}
-                        placeholder="e.g., Dar es Salaam, Kinondoni" 
                         required
-                        disabled={isSubmitting}
-                      />
+                        disabled={isSubmitting || loadingRegions}
+                        className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
+                      >
+                        <option value="">{loadingRegions ? 'Loading regions...' : 'Select region...'}</option>
+                        {regions.map((region) => (
+                          <option key={region.id} value={region.id.toString()}>{region.name}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="healthcareDistrict" className="block text-sm font-medium text-ink mb-2">
+                        District *
+                      </label>
+                      <select
+                        id="healthcareDistrict"
+                        name="healthcareDistrict"
+                        value={formData.healthcareDistrict}
+                        onChange={handleInputChange}
+                        required
+                        disabled={isSubmitting || loadingDistricts || !formData.healthcareRegion}
+                        className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
+                      >
+                        <option value="">
+                          {!formData.healthcareRegion 
+                            ? 'Select a region first...' 
+                            : loadingDistricts 
+                            ? 'Loading districts...' 
+                            : 'Select district...'}
+                        </option>
+                        {districts.map((district) => (
+                          <option key={district.id} value={district.id.toString()}>{district.name}</option>
+                        ))}
+                      </select>
                     </div>
 
                     <div>
