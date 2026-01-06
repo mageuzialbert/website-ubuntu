@@ -33,9 +33,9 @@ export function getDbPool(): mysql.Pool {
 }
 
 // Helper function to execute queries
-export async function query<T = any>(
+export async function query<T = unknown>(
   sql: string,
-  params?: any[]
+  params?: unknown[]
 ): Promise<T[]> {
   const connection = getDbPool();
   const [rows] = await connection.execute(sql, params);
