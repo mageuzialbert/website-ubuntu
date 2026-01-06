@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { query } from '@/lib/db';
+import { saveCVFile } from '@/lib/file-storage';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +27,39 @@ export async function POST(request: NextRequest) {
     // Talent specific fields
     const areaOfExpertise = formData.get('areaOfExpertise') as string;
     const yearsOfExperience = formData.get('yearsOfExperience') as string;
+    const regionId = formData.get('region') as string;
+    const districtId = formData.get('district') as string;
     const cvFile = formData.get('cvFile') as File | null;
+
+    // Fetch region and district names if provided
+    let regionName = '';
+    let districtName = '';
+    if (regionId) {
+      try {
+        const regionResult = await query<{ name: string }>(
+          'SELECT name FROM regions WHERE id = ?',
+          [regionId]
+        );
+        if (regionResult.length > 0) {
+          regionName = regionResult[0].name;
+        }
+      } catch (error) {
+        console.error('Error fetching region name:', error);
+      }
+    }
+    if (districtId) {
+      try {
+        const districtResult = await query<{ name: string }>(
+          'SELECT name FROM districts WHERE id = ?',
+          [districtId]
+        );
+        if (districtResult.length > 0) {
+          districtName = districtResult[0].name;
+        }
+      } catch (error) {
+        console.error('Error fetching district name:', error);
+      }
+    }
 
     // Validate required fields
     if (!userType || !firstName || !lastName || !email || !phone) {
@@ -59,14 +93,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (userType === 'talent' && (!areaOfExpertise || !yearsOfExperience)) {
+    if (userType === 'talent' && (!areaOfExpertise || !yearsOfExperience || !regionId || !districtId)) {
       return NextResponse.json(
-        { error: 'Missing required talent fields' },
+        { error: 'Missing required talent fields (area of expertise, years of experience, region, and district are required)' },
         { status: 400 }
       );
     }
 
-    // transporter using Titan email SMTP settings
+    // Create transporter using Titan email SMTP settings
     const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.titan.email',
   port: Number(process.env.SMTP_PORT || 465),
@@ -111,6 +145,8 @@ export async function POST(request: NextRequest) {
               <h3 style="color: #92400e; margin-top: 0;">Talent Details</h3>
               <p><strong>Area of Expertise:</strong> ${areaOfExpertise}</p>
               <p><strong>Years of Experience:</strong> ${yearsOfExperience}</p>
+              ${regionName ? `<p><strong>Region:</strong> ${regionName}</p>` : ''}
+              ${districtName ? `<p><strong>District:</strong> ${districtName}</p>` : ''}
               ${cvFile ? `<p><strong>CV Uploaded:</strong> ${cvFile.name} (${(cvFile.size / 1024 / 1024).toFixed(2)} MB)</p>` : ''}
             </div>
           `;
@@ -186,6 +222,8 @@ ${userType === 'talent' ? `
 Talent Details:
 - Area of Expertise: ${areaOfExpertise}
 - Years of Experience: ${yearsOfExperience}
+${regionName ? `- Region: ${regionName}` : ''}
+${districtName ? `- District: ${districtName}` : ''}
 ${cvFile ? `- CV Uploaded: ${cvFile.name} (${(cvFile.size / 1024 / 1024).toFixed(2)} MB)` : ''}
 ` : ''}
 
@@ -212,11 +250,92 @@ Source: Ubuntu AfyaLink Website Contact Form
       }] : []
     };
 
+    // Save CV file to cloud storage (Vercel Blob) if provided
+    let cvFilePath: string | null = null;
+    if (cvFile) {
+      try {
+        cvFilePath = await saveCVFile(cvFile);
+      } catch (fileError) {
+        console.error('Error saving CV file:', fileError);
+        // Continue even if file save fails, but log the error
+      }
+    }
+
     // Send email
-    await transporter.sendMail(mailOptions);
+    let emailSent = false;
+    let emailSentAt: Date | null = null;
+    
+    try {
+      await transporter.sendMail(mailOptions);
+      emailSent = true;
+      emailSentAt = new Date();
+    } catch (emailError) {
+      console.error('Error sending email:', emailError);
+      // Continue to save contact even if email fails
+    }
+
+    // Store contact in database
+    try {
+      const solutionsInterestedJson = solutionsInterested 
+        ? JSON.stringify(JSON.parse(solutionsInterested))
+        : null;
+
+      await query(
+        `INSERT INTO contacts (
+          user_type, first_name, last_name, email, phone, organization, message,
+          facility_type, location, solutions_interested,
+          collaboration_type,
+          area_of_expertise, years_of_experience, region_id, region_name, district_id, district_name,
+          cv_filename, cv_file_size, cv_file_path,
+          email_sent, email_sent_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          userType,
+          firstName,
+          lastName,
+          email,
+          phone,
+          organization || null,
+          message || null,
+          // Healthcare fields
+          facilityType || null,
+          location || null,
+          solutionsInterestedJson,
+          // Investor fields
+          collaborationType || null,
+          // Talent fields
+          areaOfExpertise || null,
+          yearsOfExperience ? parseInt(yearsOfExperience) : null,
+          regionId || null,
+          regionName || null,
+          districtId || null,
+          districtName || null,
+          cvFile ? cvFile.name : null,
+          cvFile ? cvFile.size : null,
+          cvFilePath,
+          // Email status
+          emailSent,
+          emailSentAt
+        ]
+      );
+    } catch (dbError) {
+      console.error('Error saving contact to database:', dbError);
+      // If email was sent but DB save failed, still return success for email
+      if (emailSent) {
+        return NextResponse.json(
+          { 
+            message: 'Email sent successfully, but failed to save contact to database',
+            warning: 'Contact may not be stored in database'
+          },
+          { status: 200 }
+        );
+      }
+      // If both failed, throw error
+      throw dbError;
+    }
 
     return NextResponse.json(
-      { message: 'Email sent successfully' },
+      { message: 'Contact saved and email sent successfully' },
       { status: 200 }
     );
 

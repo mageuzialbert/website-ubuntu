@@ -28,6 +28,8 @@ interface FormData {
   // Talent specific
   areaOfExpertise: string;
   yearsOfExperience: string;
+  region: string;
+  district: string;
   cvFile: File | null;
 }
 
@@ -46,6 +48,8 @@ export default function ContactPage() {
     collaborationType: '',
     areaOfExpertise: '',
     yearsOfExperience: '',
+    region: '',
+    district: '',
     cvFile: null
   });
   
@@ -53,6 +57,10 @@ export default function ContactPage() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [regions, setRegions] = useState<Array<{ id: number; name: string }>>([]);
+  const [districts, setDistricts] = useState<Array<{ id: number; name: string }>>([]);
+  const [loadingRegions, setLoadingRegions] = useState(false);
+  const [loadingDistricts, setLoadingDistricts] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -67,6 +75,63 @@ export default function ContactPage() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  // Fetch regions when talent is selected
+  useEffect(() => {
+    if (formData.userType === 'talent') {
+      fetchRegions();
+    } else {
+      // Reset region and district when switching away from talent
+      setFormData(prev => ({ ...prev, region: '', district: '' }));
+      setDistricts([]);
+    }
+  }, [formData.userType]);
+
+  // Fetch districts when region is selected
+  useEffect(() => {
+    if (formData.userType === 'talent' && formData.region) {
+      fetchDistricts(formData.region);
+    } else {
+      setDistricts([]);
+      setFormData(prev => ({ ...prev, district: '' }));
+    }
+  }, [formData.region, formData.userType]);
+
+  const fetchRegions = async () => {
+    setLoadingRegions(true);
+    try {
+      const response = await fetch('/api/regions');
+      if (response.ok) {
+        const data = await response.json();
+        setRegions(data.regions || []);
+      } else {
+        toast.error('Failed to load regions');
+      }
+    } catch (error) {
+      console.error('Error fetching regions:', error);
+      toast.error('Failed to load regions');
+    } finally {
+      setLoadingRegions(false);
+    }
+  };
+
+  const fetchDistricts = async (regionId: string) => {
+    setLoadingDistricts(true);
+    try {
+      const response = await fetch(`/api/districts?regionId=${regionId}`);
+      if (response.ok) {
+        const data = await response.json();
+        setDistricts(data.districts || []);
+      } else {
+        toast.error('Failed to load districts');
+      }
+    } catch (error) {
+      console.error('Error fetching districts:', error);
+      toast.error('Failed to load districts');
+    } finally {
+      setLoadingDistricts(false);
+    }
+  };
 
   const userTypes = [
     { value: 'healthcare', label: 'Healthcare Facility', icon: Building2, description: 'Dispensary, Health Center, Poly Clinic, Hospital, Pharmacy, Laboratory' },
@@ -104,7 +169,7 @@ export default function ContactPage() {
       case 'investor':
         return baseFields + 3; // phone, organization, collaborationType, message
       case 'talent':
-        return baseFields + 4; // phone, areaOfExpertise, yearsOfExperience, cvFile, message
+        return baseFields + 6; // phone, areaOfExpertise, yearsOfExperience, region, district, cvFile, message
       default:
         return baseFields;
     }
@@ -135,6 +200,8 @@ export default function ContactPage() {
         if (formData.phone) filled++;
         if (formData.areaOfExpertise) filled++;
         if (formData.yearsOfExperience) filled++;
+        if (formData.region) filled++;
+        if (formData.district) filled++;
         if (formData.cvFile) filled++;
         if (formData.message) filled++;
         break;
@@ -207,6 +274,8 @@ export default function ContactPage() {
           collaborationType: '',
           areaOfExpertise: '',
           yearsOfExperience: '',
+          region: '',
+          district: '',
           cvFile: null
         });
         toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
@@ -581,6 +650,52 @@ export default function ContactPage() {
                         required
                         disabled={isSubmitting}
                       />
+                    </div>
+
+                    <div>
+                      <label htmlFor="region" className="block text-sm font-medium text-ink mb-2">
+                        Region *
+                      </label>
+                      <select
+                        id="region"
+                        name="region"
+                        value={formData.region}
+                        onChange={handleInputChange}
+                        required
+                        disabled={isSubmitting || loadingRegions}
+                        className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
+                      >
+                        <option value="">{loadingRegions ? 'Loading regions...' : 'Select region...'}</option>
+                        {regions.map((region) => (
+                          <option key={region.id} value={region.id.toString()}>{region.name}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="district" className="block text-sm font-medium text-ink mb-2">
+                        District *
+                      </label>
+                      <select
+                        id="district"
+                        name="district"
+                        value={formData.district}
+                        onChange={handleInputChange}
+                        required
+                        disabled={isSubmitting || loadingDistricts || !formData.region}
+                        className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand/20"
+                      >
+                        <option value="">
+                          {!formData.region 
+                            ? 'Select a region first...' 
+                            : loadingDistricts 
+                            ? 'Loading districts...' 
+                            : 'Select district...'}
+                        </option>
+                        {districts.map((district) => (
+                          <option key={district.id} value={district.id.toString()}>{district.name}</option>
+                        ))}
+                      </select>
                     </div>
 
                     <div>
