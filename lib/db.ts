@@ -26,7 +26,7 @@ export function getDbPool(): mysql.Pool {
       waitForConnections: true,
       connectionLimit: 10,
       queueLimit: 0,
-      ssl: ssl ? {} : false,
+      ssl: ssl ? {} : undefined,
     });
   }
   return pool;
